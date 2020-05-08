@@ -23,23 +23,18 @@ function setup() {
   absangle = 360 / elements;
   textSize(32);
   textAlign(CENTER);
+  console.log(elements);
 }
 
 function draw() {
-
+  translate(width / 2, height / 2);
   if (speed > angle) {
     noLoop();
   }
   background(77);
   if (option === 1) {
 
-
-    translate(width / 2, height / 2);
-
-    
-
     push();
-    //ellipse(0, 0, 800);
     rotate(speed);
     strokeWeight(5);
     line(0, 0, 0, 350);
@@ -57,8 +52,6 @@ function draw() {
     pop();
 
   } else { //=============================================== Main Part ==============================================
-    translate(width / 2, height / 2);
-
     push();
 
     rotate(speed);
@@ -68,12 +61,13 @@ function draw() {
     push();
     if (elements > 1) {
       for (let i = 0; i < elements; i++) {
-          
-        
+
+
         rotate(absangle);
         push();
+        strokeWeight(3);
         fill(dataProjects.projectsAr[i].r, dataProjects.projectsAr[i].g, dataProjects.projectsAr[i].b);
-        arc(0,0,800,800,0,absangle);
+        arc(0, 0, windowHeight - 100, windowHeight - 100, 0, absangle);
         pop();
 
         push();
@@ -81,7 +75,7 @@ function draw() {
         rotate(absangle / 2 + 2);
         text(dataProjects.projectsAr[i].nombre, 200, 0);
         pop(); //push for color and names rotation        
-      
+
       }
     }
     pop(); //push for rendering
@@ -91,6 +85,7 @@ function draw() {
     //Aguja
     push();
 
+    strokeWeight(3);
     fill(255, 0, 0);
     triangle(-25, -425, 25, -425, 0, -380);
 
