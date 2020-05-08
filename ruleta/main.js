@@ -15,30 +15,31 @@ function setup() {
   c = createCanvas(windowWidth, windowHeight);
   c.position(0, 0);
   c.style('z-index', '-1');
-  //ellipseMode(RADIUS);
   stroke(0);
   angleMode(DEGREES);
-  rectMode(CENTER);
   acc = random(5);
   angle = random(100000);
   elements = dataProjects.projectsAr.length;
+  absangle = 360 / elements;
   textSize(32);
+  textAlign(CENTER);
 }
 
 function draw() {
+
+  if (speed > angle) {
+    noLoop();
+  }
   background(77);
   if (option === 1) {
-    if (speed > angle) {
-      noLoop();
-    }
+
 
     translate(width / 2, height / 2);
 
-    absangle = 360 / elements;
-
+    
 
     push();
-    ellipse(0, 0, 800);
+    //ellipse(0, 0, 800);
     rotate(speed);
     strokeWeight(5);
     line(0, 0, 0, 350);
@@ -54,42 +55,40 @@ function draw() {
       }
     }
     pop();
-  } else {
-    translate(width / 2, height / 2);
 
-    if (speed > angle) {
-      noLoop();
-    }
+  } else { //=============================================== Main Part ==============================================
+    translate(width / 2, height / 2);
 
     push();
 
     rotate(speed);
     speed += acc;
     acc += 1;
-    ellipse(0, 0, 800);
-    absangle = 360 / elements;
 
     push();
     if (elements > 1) {
       for (let i = 0; i < elements; i++) {
-
-        line(0, 0, 0, 400);
+          
+        
         rotate(absangle);
+        push();
+        fill(dataProjects.projectsAr[i].r, dataProjects.projectsAr[i].g, dataProjects.projectsAr[i].b);
+        arc(0,0,800,800,0,absangle);
+        pop();
 
         push();
-
-        noStroke();
-        fill(dataProjects.projectsAr[i].r, dataProjects.projectsAr[i].g, dataProjects.projectsAr[i].b);
-        rotate(absangle - (absangle / 2));
-        text(dataProjects.projectsAr[i].nombre, 50, 0);
-
-        pop();
+        fill(0);
+        rotate(absangle / 2 + 2);
+        text(dataProjects.projectsAr[i].nombre, 200, 0);
+        pop(); //push for color and names rotation        
+      
       }
     }
-    pop();
+    pop(); //push for rendering
 
-    pop();
+    pop(); //push for rotation
 
+    //Aguja
     push();
 
     fill(255, 0, 0);
@@ -100,7 +99,7 @@ function draw() {
 }
 
 function keyPressed() {
-  if (keyCode == ENTER) {
+  if (keyCode === 32) {
     angle = random(100000);
     speed = 0;
     acc = 0;
