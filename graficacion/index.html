@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea 1</title>
+  <script src="libraries/p5.js"></script>
+  <script src="libraries/p5.dom.js"></script>
+  <script src="libraries/p5.sound.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="Sketch.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="titulo">Tarea 1: Lineas y conicas</div>
+    <nav>
+      <div id="github">github</div>
+      <div id="reference">p5 reference</div>
+    </nav>
+
+  </header>
+
+  <section id="mainCol">
+    <section id="sepCont">
+      <div id="contenidoL">
+        <h1>Linea</h1>
+        <p class="linea">
+          Este canvas utiliza el algoritmo de punto medio para pintar
+          pixeles en forma de linea, utilizando dos puntos ingresados
+          el usuario.
+          <br><br>
+          No importa el orden el cual el usuario introduzca los puntos.
+          <br>
+          Es necesario precionar graficar para que el canvas se
+          actualice.
+          <br><br>
+          Punto 1:
+          <br>
+          x = <input type="text" placeholder="50" id="x1input">, y = <input type="text" placeholder="50" id="y1input">
+          <br><br>
+          Punto 2:
+          <br>
+          x = <input type="text" placeholder="50" id="x2input">, y = <input type="text" placeholder="50" id="y2input">
+          <br><br>
+        </p>
+      </div>
+
+      <div id="linea"></div>
+
+    </section>
+
+    <section id="sepCont">
+      <div id="contenido">
+        <h1>Circulo</h1>
+        <p>
+          En este canvas se grafica una circunferencia centrada en el origen
+          con un radio "r" dado por el usuario, utilizando el algoritmo de
+          diferencia de segundo orden.
+          <br><br>
+          r = <input type="text" placeholder="50" id="inputCirc">
+        </p>
+      </div>
+
+      <div id="circulo"></div>
+
+    </section>
+
+    <section id="sepCont">
+      <div id="contenido">
+        <h1>Elipse</h1>
+        <p>
+          Aqui utilizamos el algoritmo de punto medio para graficar una elipse
+          centrada en el origen, con un semieje mayor "a" y un semieje menor "b" dados
+          por el usuario.
+          <br><br>
+          a = <input type="text" placeholder="80" id="aInElipse">
+          <br>
+          b = <input type="text" placeholder="50" id="bInElipse">
+        </p>
+      </div>
+
+      <div id="ellipse"></div>
+
+    </section>
+
+    <section id="sepCont">
+      <div id="contenido">
+        <h1>Parabola</h1>
+        <p>
+          En este canvas se grafica una parabola con vertice en el origen utilizando el algoritmo
+          de punto medio con el parametro "p" dado por el usuario para determinar su abertura.
+          <br><br>
+          p = <input type="text" placeholder="50" id="pInPar">
+        </p>
+      </div>
+
+      <div id="parabola"></div>
+
+    </section>
+
+    <section id="sepCont">
+      <div id="contenido">
+        <h1>Hiperbola</h1>
+        <p>
+          Aqui graficamos una hiperbola centrada en el origen utlizando el algoritmo de punto medio
+          y los semiejes mayor "a" y menor "b" dados por el usuario.
+          <br><br>
+          a = <input type="text" placeholder="10" id="aInHip">
+          <br>
+          b = <input type="text" placeholder="5" id="bInHip">
+        </p>
+      </div>
+
+      <div id="hiperbola"></div>
+
+    </section>
+  </section>
+</body>
+</html>
