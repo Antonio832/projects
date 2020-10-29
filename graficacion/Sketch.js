@@ -67,6 +67,14 @@ var l = function (p) {
             p.pop();
             Y1++;
           }
+        } else {
+          while (Y2 <= Y1) {
+            p.push();
+            p.stroke(0, 255, 0);
+            p.point(X1, Y2);
+            p.pop();
+            Y2++;
+          }
         }
         return;
       }
