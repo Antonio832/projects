@@ -317,7 +317,7 @@ var pa = function (p) { //p es el handler para p5
     pa = pin.value();
     p.translate(_width / 2, _height / 2);
     p.scale(1, -1);
-
+    console.log("simon");
     _parabola(pa);
   };
 
