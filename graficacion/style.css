@@ -5,16 +5,34 @@ body {
 }
 
 header {
-    margin: 0px 400px 0px 400px;
+justify-content: center;
     padding: 20px 0px 20px 0px;
     background: #008577;
     border-radius: 0px 0px 15px 15px;
-
     display: flex;
+    width: 1080;
 }
 
-nav{
+button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+nav {
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
+    flex-direction: row;
 }
 
 p {
@@ -26,11 +44,11 @@ p {
     border-radius: 5px 5px 5px 5px;
 }
 
-p.linea{
+p.linea {
     padding: 0px 5px 50px 10px;
 }
 
-input{
+input {
     border: 1px solid rgb(121, 121, 121);
     height: 18px;
     width: 25px;
@@ -50,19 +68,19 @@ h1 {
     padding: 10px 20px;
 }
 
-#titulo{
+#titulo {
     width: 50%;
     padding: 0px 0px 0px 20px;
     font-size: 30px;
 }
 
-#btnCirculo{
+#btnCirculo {
     width: 73px;
 }
 
 #contenido {
     width: 50%;
-    
+
 }
 
 #mainCol {
@@ -77,4 +95,23 @@ h1 {
 #sepCont {
     display: flex;
     flex-direction: row;
+}
+
+.github {
+    color: white;
+    font-style: initial;
+    border-radius: 5px;
+    background: blanchedalmond;
+    margin: auto;
+    padding: 5px 15px;
+    background: rgb(166, 77, 173);
+    background: linear-gradient(90deg, rgba(166, 77, 173, 1) 0%, rgba(77, 38, 127, 1) 100%);
+}
+
+.reference{
+    padding: 5px 10px;
+    font-size: 15px;
+    margin: 0px 0px 0px 20px;
+    border-radius: 5px;
+    background: #ed225d;
 }
