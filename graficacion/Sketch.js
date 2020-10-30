@@ -1,22 +1,38 @@
+//Variables globales para las dimensiones de los canvas.
 const _width = 500;
 const _height = 500;
 
+/* *******************************************************
+|                                                        |
+| Todas las funciones ejecutadas por el parametro "p"    |
+| pueden encontrarse en la referencia de p5.js           |
+|                                                        |
+**********************************************************/
+
 //Sketch de Linea************************************************************************************
-var l = function (p) {
+var l = function (p) { //Instancia para canvas de linea
+
+  //Inputs selectores de elementos DOM
   let x1in, y1in, x2in, y2in;
+
+  //Lectores de inputs 
   let x1, y1, x2, y2;
 
+  //Setup es la primera funcion que se ejecuta, se ejecuta una sola vez.
   p.setup = function () {
+    //Creando canvas
     p.createCanvas(_width, _height);
+
+    //Asignacion de selectores hacia elementos DOM en el documento html mediante el uso de sus 'id' en index.html
     x1in = p.select('#x1input');
     y1in = p.select('#y1input');
     x2in = p.select('#x2input');
     y2in = p.select('#y2input');
-
   };
 
+  //Draw se ejecuta de 60 a 30 veces por segundo despues de setup 
   p.draw = function () {
-    p.background(0);
+    p.background(0); //Pintando todo el background negro
 
     //Pinta los ejes
     p.push();
@@ -26,19 +42,22 @@ var l = function (p) {
     p.line(_width / 2, 0, _width / 2, _height);
     p.pop();
 
+    //Leyendo los valores de los elementos DOM y parseando a enteros
     x1 = parseInt(x1in.value());
     y1 = parseInt(y1in.value());
     x2 = parseInt(x2in.value());
     y2 = parseInt(y2in.value());
 
+    //Primer checeo para ver si no son strings.
     if (check(x1, y1, x2, y2)) {
-
-    } else {
-      _line(x1, y1, x2, y2);
+      //Si es un string no se hara nada.
+    } else { //De otra forma dibujamos la linea.
+      _linea(x1, y1, x2, y2);
     }
-
   };
 
+  //Funcion para el primer chequeo de variables.
+  //Recibe 4 variables y si alguna de ellas es de tipo String regresa true, de otra manera regresa false.
   function check(x1, y1, x2, y2) {
     if (typeof (x1) == "string" || typeof (y1) == "string" || typeof (x2) == "string" || typeof (y2) == "string") {
       return true;
@@ -47,47 +66,55 @@ var l = function (p) {
     }
   }
 
-  function _line(X1, Y1, X2, Y2) {
-    if (isNaN(X1) || isNaN(Y1) || isNaN(X2) || isNaN(Y2)) {
-
+  //Funcion Linea recibe cuatro argumentos que son las coordenadas de cada punto y las pinta utilizando el algoritmo de punto medio.
+  function _linea(x1, y1, x2, y2) {
+    //Segundo checeo de variables por si no son un numero.
+    if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2)) {
+      //Si no son un numero no se hara nada.
     } else {
+      //De otra forma, trasladamos al centro del canvas 
       p.translate(_width / 2, _height / 2);
-      p.scale(1, -1);
+      p.scale(1, -1); //Escalamos para invertir, ya que el aumentar la y significa ir hacia abajo en vez de hacia arriba
 
-      let aux;
+      let aux, dY, dX, x, y, av, avR, avI, IncYi, IncXi, IncXr, IncYr;
+      /*
+      aux:  Para intercambiar valores por si el orden de los puntos es distinto.
+      dY:   Diferencia entre las y's entrantes.
+      dX:   Diferencia entre las x's entrantes.
+      x:    x utilizada en el algoritmo para pintar.
+      y:    y utilizada en el algoritmo para pintar.
+      */
 
-      let dY, dX, k, X, Y, av, avR, avI, IncYi, IncXi, IncXr, IncYr;
-
-      if (X1 == X2) {
-        if (Y1 < Y2) {
-          while (Y1 <= Y2) {
+      if (x1 == x2) {
+        if (y1 < y2) {
+          while (y1 <= y2) {
             p.push();
             p.stroke(0, 255, 0);
-            p.point(X1, Y1);
+            p.point(x1, y1);
             p.pop();
-            Y1++;
+            y1++;
           }
         } else {
-          while (Y2 <= Y1) {
+          while (y2 <= y1) {
             p.push();
             p.stroke(0, 255, 0);
-            p.point(X1, Y2);
+            p.point(x1, y2);
             p.pop();
-            Y2++;
+            y2++;
           }
         }
         return;
       }
 
-      if (X2 < X1) {
-        aux = X1;
-        X1 = X2;
-        X2 = aux;
+      if (x2 < x1) {
+        aux = x1;
+        x1 = x2;
+        x2 = aux;
       }
 
-      dY = (Y2 - Y1);
-      dX = (X2 - X1);
-      // 1 - Incrementos para las secciones con avance inclinado
+      dY = (y2 - y1);
+      dX = (x2 - x1);
+
       if (dY >= 0) {
         IncYi = 1;
       } else {
@@ -99,39 +126,36 @@ var l = function (p) {
       } else {
         IncXi = -1;
       }
-      // 2 - Incrementos para las secciones con avance recto:
+
       if (dX >= dY) {
         IncYr = 0;
         IncXr = IncXi;
       } else {
         IncXr = 0;
         IncYr = IncYi;
-        // Cuando dy es mayor que dx, se intercambian, para reutilizar el mismo bucle.
-        // ver octantes blancos en la imagen encima del cÃ³digo
-        k = dX;
+
+        aux = dX;
         dX = dY;
-        dY = k;
+        dY = aux;
       }
 
-      // 3  - Inicializar valores (y de error).
-      X = X1;
-      Y = Y1;
+      x = x1;
+      y = y1;
       avR = (2 * dY);
       av = (avR - dX);
       avI = (av - dX);
 
-      // 4  - Bucle para el trazado de las lÃnea
-      while (X <= X2) {
+      while (x <= x2) {
         p.stroke(0, 255, 0);
-        p.point(X, Y);
+        p.point(x, y);
         if (av >= 0) {
-          X = (X + IncXi); // X aumenta en inclinado.
-          Y = (Y + IncYi); // Y aumenta en inclinado.
-          av = (av + avI); // Avance Inclinado
+          x = (x + IncXi);
+          y = (y + IncYi);
+          av = (av + avI);
         } else {
-          X = (X + IncXr); // X aumenta en recto.
-          Y = (Y + IncYr); // Y aumenta en recto.
-          av = (av + avR); // Avance Recto
+          x = (x + IncXr);
+          y = (y + IncYr);
+          av = (av + avR);
         }
       }
     }
@@ -149,8 +173,6 @@ var c = function (p) { //p es el handler para p5
     p.createCanvas(_width, _height);
 
     input = p.select('#inputCirc');
-
-    Rvalue = 50;
   };
 
   p.draw = function () {
@@ -239,8 +261,6 @@ var e = function (p) { //p es el handler para p5
     p.translate(_width / 2, _height / 2);
 
     _elipse(a, b);
-
-
   };
 
   function _elipse(a, b) {
@@ -317,7 +337,7 @@ var pa = function (p) { //p es el handler para p5
     pa = pin.value();
     p.translate(_width / 2, _height / 2);
     p.scale(1, -1);
-    console.log("simon");
+
     _parabola(pa);
   };
 
@@ -343,6 +363,7 @@ var pa = function (p) { //p es el handler para p5
 
     //REGION II
     d2 = p.pow(x + 0.5, 2) - 4 * (param * (y + 1.0));
+
     while (x <= 400) {
       y++;
       if (d2 <= 0) {
@@ -403,7 +424,6 @@ var h = function (p) { //p es el handler para p5
     let aa = a * a;
     let bb = b * b;
     let d1, d2;
-    //double d1 = 2*aa - bb - 2*a*bb;
 
     d1 = (bb * p.pow(x + 0.5, 2)) - (aa * p.pow(y + 1.0, 2)) - (aa * bb);
 
