@@ -38,6 +38,11 @@ button{
     margin: 5px 0px;
 }
 
+img{
+    max-width: 60px;
+    height: auto;
+}
+
 #inputFile{
     padding: 10px 0px 0px 10px;
     border-style: none none none solid;
@@ -51,9 +56,8 @@ button{
 }
 
 #github{
-    padding: 30px 15px;
     width: 68px;
-    height: 27px;
+    height: 71px;
     border-style: none solid none none;
     border-width: thin;
     border-color: silver;
