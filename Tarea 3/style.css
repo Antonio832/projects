@@ -33,29 +33,29 @@ div {
     flex-direction: column;
 }
 
-button{
+button {
     width: 87px;
     margin: 5px 0px;
 }
 
-img{
+img {
     max-width: 60px;
     height: auto;
 }
 
-#inputFile{
+#inputFile {
     padding: 10px 0px 0px 10px;
     border-style: none none none solid;
     border-width: thin;
     border-color: silver;
 }
 
-#titulo{
+#titulo {
     width: auto;
 
 }
 
-#github{
+#github {
     width: 68px;
     height: 71px;
     border-style: none solid none none;
@@ -73,6 +73,6 @@ img{
     width: auto;
 }
 
-#selectInput{
+#selectInput {
     width: 50px;
 }
