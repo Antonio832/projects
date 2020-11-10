@@ -1,0 +1,74 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+
+    border: solid;
+    border-color: silver;
+    border-width: thin;
+    margin: 8px 8px 0px 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+section {
+    margin: 10px 8px;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    border-color: silver;
+    border-width: thin;
+}
+
+div {
+    width: 50%;
+    padding: 5px 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    width: 87px;
+    margin: 5px 0px;
+}
+
+#inputFile{
+    padding: 10px 0px 0px 10px;
+    border-style: none none none solid;
+    border-width: thin;
+    border-color: silver;
+}
+
+#titulo{
+    width: auto;
+
+}
+
+#github{
+    padding: 30px 15px;
+    width: 68px;
+    height: 27px;
+    border-style: none solid none none;
+    border-width: thin;
+    border-color: silver;
+}
+
+#filtro {
+    border-style: none solid none none;
+    border-width: thin;
+    border-color: silver;
+}
+
+#fotoOg {
+    width: auto;
+}
+
+#selectInput{
+    width: 50px;
+}
