@@ -9,3 +9,7 @@
 
 ### -[Histograma equalizacion](https://antonio832.github.io/projects/Tarea%202/Equalization)
 ### -[Histograma match](https://antonio832.github.io/projects/Tarea%202/Matching)
+
+## Tarea 3 Convolucion
+### -[Histograma equalizacion](https://antonio832.github.io/projects/Tarea%203/)
+
