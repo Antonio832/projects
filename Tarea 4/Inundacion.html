@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tarea 4</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div id="nombres">
+            <h1>Medina Valenzuela Antonio</h1>
+            <h1>El pepe</h1>
+        </div>
+        <div id="links">
+            <a href="index.html">
+                <h1 id="works">Encontrar contornos</h1>
+            </a>
+
+            <a href="Inundacion.html">
+                <h1 id="works">Algoritmo de inundacion</h1>
+            </a>
+
+            <a href="https://github.com/Antonio832/projects/tree/master/Tarea%204">
+                <h1 id="git">GitHub</h1>
+            </a>
+
+            <a href="https://p5js.org/reference/">
+                <h1 id="reference">p5.js documentacion</h1>
+            </a>
+        </div>
+    </nav>
+
+    <section>
+        <h1 id="mainTitulo">Deteccion de objetos en imagenes binarias</h1>
+
+        <div id="mainCol">
+            <p id="title">Introduccion:</p>
+            <p>
+                En este apartado se muestran distintas imagenes pasadas por el Algoritmo de deteccion de contornos el
+                cual nos permite detectar distintos objetos y colorearlos de distintos colores para poder identificarlos
+                por separado, utilizando la libreria de
+                <a>
+                    p5.js
+                </a>
+                para manejo de arreglos de pixeles, ademas utilizamos un modelo para clasificar secciones y
+                procesamiento de las imagenes binarias para deteccion de objetos en las imagenes, al utilizar este
+                modelo, nos permite hacer cosas como deteccion de contornos y objetos de manera rapida y eficiente.
+            </p>
+
+            <p class="title">Ejemplos:</p>
+
+            <div class="imgCont">
+                <p>Primer ejemplo: (Threshold = 125, Blur[4, 4])</p>
+                <div><img src="images/contornos/og1.jpg" alt="original"></div>
+                <div><img src="images/Objetos/ej1.png" alt="ejemplo"></div>
+            </div>
+
+            <div class="imgCont">
+                <p>Segundo ejemplo: (Threshold = 225, Blur[10, 10])</p>
+                <div><img src="images/contornos/og2.jpeg" alt="original"></div>
+                <div><img src="images/Objetos/ej2.png" alt="ejemplo"></div>
+            </div>
+
+            <div class="imgCont">
+                <p>Tercero ejemplo: (Threshold = 90, Blur[10, 10])</p>
+                <div><img src="images/contornos/og3.jpg" alt="original"></div>
+                <div><img src="images/Objetos/ej3.png" alt="ejemplo"></div>
+            </div>
+
+            <div class="imgCont">
+                <p>Cuarto ejemplo: (Threshold = 50, Blur[10, 10])</p>
+                <div><img src="images/contornos/og4.JPG" alt="original" width="625" height="500"></div>
+                <div><img src="images/Objetos/ej4.png" alt="ejemplo" width="625" height="500"></div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

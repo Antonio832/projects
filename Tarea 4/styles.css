@@ -1,0 +1,104 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+nav {
+    padding: 5px;
+    background-color: rgb(187, 187, 187);
+    display: flex;
+}
+
+h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 20pt;
+    padding: 0px 20px;
+}
+
+img {
+    background-color: white;
+}
+
+#nombres {
+    color: rgb(0, 0, 0);
+    padding: 9px;
+    font-size: 10pt;
+    display: flex;
+    flex-direction: column;
+}
+
+#links {
+    font-size: 10pt;
+    margin: 10px;
+    display: inherit;
+}
+
+#links h1 {
+    margin: 0px 10px;
+    padding: 8px;
+    border: black solid thin;
+    border-radius: 10px;
+}
+
+#works {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+#git {
+    color: rgb(221, 221, 221);
+    font-style: initial;
+    border-radius: 5px;
+    background: blanchedalmond;
+    margin: auto;
+    padding: 5px 15px;
+    background: rgb(166, 77, 173);
+    background: linear-gradient(90deg, rgba(166, 77, 173, 1) 0%, rgba(77, 38, 127, 1) 100%);
+}
+
+#reference {
+    color: rgb(221, 221, 221);
+    padding: 5px 10px;
+    font-size: 20px;
+    margin: 0px 0px 0px 20px;
+    border-radius: 5px;
+    background: #ed225d;
+}
+
+#mainTitulo {
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40pt;
+    padding: 80px 0px 10px 10px;
+    width: 60%;
+    border: black thick;
+    border-style: none none solid none;
+    margin: 0px 0px 20px 0px;
+}
+
+#mainCol {
+    background-color: rgb(243, 243, 243);
+    width: 55%;
+    padding: 0px 30px;
+}
+
+.title {
+    text-decoration: underline;
+    padding: 0px;
+    font-size: 28pt;
+}
