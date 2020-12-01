@@ -14,5 +14,5 @@
 ### -[Histograma equalizacion](https://antonio832.github.io/projects/Tarea%203/)
 
 ## Tarea 4 Deteccion de contornos
-### -[Histograma equalizacion](https://antonio832.github.io/projects/Tarea%204/)
+### -[Contornos](https://antonio832.github.io/projects/Tarea%204/)
 
