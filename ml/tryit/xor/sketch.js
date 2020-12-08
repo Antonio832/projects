@@ -1,3 +1,4 @@
+//Variable que controla el modo instancia en la libreria p5 para poner el canvas e un div.
 var xor = function (p) {
     let nn; //Objeto destinado a ser la red neuronal
 
@@ -99,4 +100,4 @@ var xor = function (p) {
     }
 }
 
-var sketchXOR = new p5(xor, 'canvas');
+var sketchXOR = new p5(xor, 'canvas'); //Asigna el canvas a un div con id="canvas"
