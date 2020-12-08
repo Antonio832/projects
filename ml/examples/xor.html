@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/sheets/xor.css">
+    <title>XOR</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <div class="navItem">Home</div>
+        </a>
+        <a href="">
+            <div class="navItem">Ejemplos</div>
+        </a>
+        <a href="about.html">
+            <div class="navItem">About</div>
+        </a>
+        <a href="https://github.com/Antonio832/projects/tree/master/ml">
+            <div class="navItem" id="push">Github</div>
+        </a>
+        <a href="https://p5js.org/reference/">
+            <div class="navItem">p5.js referencia</div>
+        </a>
+    </nav>
+
+    <header>
+        <div>
+            <h1>¿Que es mas facil que el ABC? XOR!</h1>
+        </div>
+    </header>
+
+    <section>
+        <div class="mainText">
+            <p>
+                El problema de clasificacion XOR se trata de un problema linealmente no separable. XOR significa
+                "Exclusive OR" o "OR Exclusivo" el cual es una operacion booleana la cual tiene la siguiente tabla de
+                verdad.
+            </p>
+            <table>
+                <tr>
+                    <th>Entradas:</th>
+                    <th>Salidas:</th>
+                </tr>
+                <tr>
+                    <td>V (XOR) V</td>
+                    <td>Falso</td>
+                </tr>
+                <tr>
+                    <td>V (XOR) F</td>
+                    <td>Verdadero</td>
+                </tr>
+                <tr>
+                    <td>F (XOR) V</td>
+                    <td>Verdadero</td>
+                </tr>
+                <tr>
+                    <td>F (XOR) F</td>
+                    <td>Falso</td>
+                </tr>
+            </table>
+            <p>
+                Podemos ver que existen dos grupos, en un grupo todos son falsos y en otro grupo todos son verdaderos.
+                El problema que se presenta aqui es imposible separar ambos grupos con una sola linea en ciertos casos
+                especiales. Representando los puntos en un plano, se facilita la planteacion de el problema, lo podemos
+                ver en uno de los siguientes casos especiales:
+            </p>
+            <img src="../src/xor/xor1.jpg" width="400" height="400">
+            <p>
+                Si intentamos separar los grupos con una sola linea, vemos claramente que es imposible separarlos, es
+                por eso que se le dice linealmente no separable. Si utilizamos un modelo de redes neuronales para tratar
+                de resolver el problema, debemos optar por enseñarle nosotros mismos, esto quiere decir que el tipo de
+                aprendizaje que realizara el modelo, es un aprendizaje supervizado, donde nosotros somos quienes le
+                decimos a la red neuronal que grupo de valores es correcto y cual es el incorrecto para que el mismo
+                modelo haga ajustes dado un valor correcto y una prediccion hecha. Ademas, el modelo debe de ser de dos
+                o mas capas de profundidad, ya que con una sola capa, le es imposible hacer la clasificacion.
+                <br>
+                La arquitectura de la red quedaria de la siguiente manera:
+                <br>
+
+            </p>
+            <img src="../src/xor/xor2.jpg" width="600" height="600">
+            <p>
+                Ahora para representar el escenario mostrado en la primera imagen, haremos uso de una libreria llamada
+                p5.js para controlar un objeto canvas, en el cual sera el destino de interpretacion de lo que la red
+                neuronal esta haciendo en tiempo real.
+                <br>
+                <br>
+                En la siguiente imagen podemos ver como las esquinas estan representando el caso especial:
+            </p>
+            <img src="../src/xor/xor3.jpg" width="600" height="600">
+            <p>
+                Los input con lo que lo entrenamos son las coordenadas y las etiquetas correctas son 0 para falso y 1
+                para verdadero, puedes ver la documentacion de la informacion de entrenamiento
+                <a href="../tryit/xor/data.txt">aqui</a>.
+                <br>
+                La libreria de redes neuronales la puedes encontrar
+                <a href="https://github.com/CodingTrain/Toy-Neural-Network-JS/tree/master/lib">aqui</a>.
+                <br>
+                <br>
+                El canvas de esta libreria corre el proceso de dibujado 60 veces por segundo, y en el programa,
+                progresivamente entrenamos 150 veces por cada corrida y hacemos una prediccion en cada corrida despues
+                de el set de entrenamiento termina.
+                <br>
+                <br>
+                Con esto, nos queda un efecto de como la red neuronal va asercandoce lentamente al resultado. Es como
+                ver a una computadora aprender.
+            </p>
+            <img src="../src/xor/xor.gif" width="600" height="600">
+            <p>
+                Esta animacion fue grabada localmente, pero puedes jugar con el modelo tu mismo 
+                <a href="../tryit/xor/index.html"> aqui!!!!</a>.
+                <br>
+                Puedes ver el codigo y documentacion <a href="">aqui</a>.
+                
+            </p>
+        </div>
+    </section>
+
+    <footer>footer</footer>
+</body>
+
+</html>
