@@ -1,17 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
-    <script src="sketch.js"></script>
-
     <script src="./lib/matrix.js"></script>
+    <script src="sketch.js"></script>
     <script src="./lib/nn.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <nav>
+        <a href="../../">
+            <div class="navItem">Home</div>
+        </a>
+        <a href="">
+            <div class="navItem">Ejemplos</div>
+        </a>
+        <a href="about.html">
+            <div class="navItem">About</div>
+        </a>
+        <a href="https://github.com/Antonio832/projects/tree/master/ml">
+            <div class="navItem" id="push">Github</div>
+        </a>
+        <a href="https://p5js.org/reference/">
+            <div class="navItem">p5.js referencia</div>
+        </a>
+    </nav>
+
+    <header>
+        <div>
+            <h1>Juega con XOR!</h1>
+        </div>
+    </header>
+
+    <section>
+        <div class="maintext">
+            <p>
+                En este sketch estamos viendo en vivo como el modelo de redes neuronales va resolviendo gradualmente el
+                problema de XOR.
+                <br>
+                <br>
+                Si nos damos cuenta y somos un poco suertudos, el modelo puede quedarse atorado!
+                <br>
+                ¿Que pasara si lo reiniciamos? <div id="resetNN"></div>
+                <br>
+                <br>
+                ¿Como se comportara la red si en vez de dos capas, la creamos con 4? ¿Se equivocara menos? o ¿No
+                importara?
+                <div id="NN4"></div>
+                <br>
+                <br>
+                Ajusta el Learning rate, ¿Que es lo peor que podria pasar?, despues de ajustarlo, reinicia el modelo
+                para ver que sucede.
+                <div id="inSlide"></div>
+            </p>
+            <div id="canvas">
+
+            </div>
+        </div>
+    </section>
+
+    <footer>Foo</footer>
+
 </body>
+
 </html>
