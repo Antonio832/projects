@@ -1,0 +1,52 @@
+let circulos = [];
+let cuadrados = [];
+let triangulos = [];
+
+function preload() {
+    for (let i = 0; i < 200; i++) {
+        let index = nf(i + 1, 4, 0);
+        circulos[i] = loadImage(`./data/circulo${index}.png`);
+        cuadrados[i] = loadImage(`./data/cuadrado${index}.png`);
+        triangulos[i] = loadImage(`./data/triangulo${index}.png`);
+    }
+}
+
+let clasificador;
+
+function setup() {
+    createCanvas(400, 400);
+
+    let setup = {
+        inputs: [128, 128, 4],
+        task: 'imageClassification',
+        debug: true,
+    };
+
+    clasificador = ml5.neuralNetwork(setup);
+
+    for (let i = 0; i < circulos.length; i++) {
+        clasificador.addData({
+            image: circulos[i]
+        }, {
+            label: "Circulo"
+        });
+        clasificador.addData({
+            image: cuadrados[i]
+        }, {
+            label: "Cuadrado"
+        });
+        clasificador.addData({
+            image: triangulos[i]
+        }, {
+            label: "Triangulo"
+        });
+    }
+
+    clasificador.normalizeData();
+    clasificador.train({epochs: 50},termina);
+}
+
+function termina(){
+    console.log('termino');
+    clasificador.save();
+}

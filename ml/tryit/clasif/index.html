@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibuja una figura</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.6.0/dist/ml5.min.js"></script>
+    <script src="sketch.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="../../">
+            <div class="navItem">Home</div>
+        </a>
+        <a href="">
+            <div class="navItem">Ejemplos</div>
+        </a>
+        <a href="about.html">
+            <div class="navItem">About</div>
+        </a>
+        <a href="https://github.com/Antonio832/projects/tree/master/ml">
+            <div class="navItem" id="push">Github</div>
+        </a>
+        <a href="https://p5js.org/reference/">
+            <div class="navItem">p5.js referencia</div>
+        </a>
+    </nav>
+
+    <header>
+        <div>
+            <h1>Dibuja una figura!!</h1>
+        </div>
+    </header>
+
+    <section>
+        <div class="maintext">
+            <p>
+                Dibuja una figura, el modelo clasifica circulos, cuadrados y triangulos.
+                <br>
+                Podemos notar cierta inconsistencia con el modelo, ya que fue entrenado con figuras con mucho contorno,
+                intenta agrandar el contorno de la siguiente manera:
+            </p>
+            <img src="../../src/clasif/thumbnail.png">
+            <div id="canvas">
+
+            </div>
+        </div>
+    </section>
+
+    <footer>Foo</footer>
+
+</body>
+
+</html>
