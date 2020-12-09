@@ -5,13 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/sheets/clasificacion.css">
+    <link rel="stylesheet" href="../../sheets/clasificacion.css">
     <title>Clasificando figuras para apurados</title>
 </head>
 
 <body>
     <nav>
-        <a href="../index.html">
+        <a href="../">
             <div class="navItem">Home</div>
         </a>
         <a href="">
@@ -35,7 +35,50 @@
     </header>
 
     <section>
-        sfase
+        <div class="mainText">
+            <p>
+                Este clasificador clasifica tres figuras, triangulos, circulos y cuadrados. Fue entrenado con la
+                libreria ml5.js, la cual esta hecha encima de la libreria de tensorflow.js, la cual se utiliza para
+                modelar redes neuronales.
+            </p>
+
+            <p>
+                El primer paso que tome, fue generar un dataset de 900 figuras, 300 imagenes de circulos, 300 imagenes
+                de cuadrados y 300 imagenes de triangulos, con la ayuda del ambiente de programacion en java
+                <a href="https://processing.org">Procecssing</a>. Si gustas ver el dataset especifico con el cual se
+                entreno el modelo, lo puedes descargar de
+                <a href="https://drive.google.com/drive/folders/1mMlzcCYx-1fg8mOqhd6kvXSGjnqaaHhG?usp=sharing">aqui</a>.
+                <br>
+                <br>
+                El tipo de red neuronal que utilizamos, es una red neuronal convolucional, puedes ver la documentacion
+                del codigo de entrenamiento
+                <a href="../tryit/clasif/entrenador.txt">aqui</a>.
+                <br>
+                Desafortunadamente, como el modelo es entrenado localmente, pero mediante el navegador, solo pudimos
+                cargar
+                600 imagenes en lugar de 900, pero aun asi logre que entrenara con 50 epochs. ml5 contiene una funcion
+                que te permite ver en vivo como la funcion de perdida va desarrollandose conforme pasa el tiempo.
+                <br>
+                <br>
+                La funcion de perdida del modelo se ve de la siguiente manera.
+            </p>
+            <img src="../src/clasif/Loss.png">
+            <p>
+                Despues del entrenamiento, exportamos el modelo, junto con toda la informacion de ajustes de pesos, ml5
+                se encarga de guardar esto en tres archivos, los cuales podemos encontrar en
+                <a href="">este</a> repositorio de github.
+                <br>
+                Por ultimo cargamos el modelo a un proyecto regular de p5 junto con la libreria de ml5.js y programamos
+                para tomar muestras de la camara web y hacer las predicciones en tiempo real! Puedes ver la
+                documentacion de esta parte
+                <a href="">aqui</a>.
+            </p>
+            <p>
+                <a href="../tryit/clasif/">
+                    Pruebalo y clasifica tu mismo ahora!
+                </a>
+            </p>
+        </div>
     </section>
 
     <footer>footer</footer>
