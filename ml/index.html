@@ -14,9 +14,14 @@
         <a href="/">
             <div class="navItem">Home</div>
         </a>
-        <a href="">
-            <div class="navItem">Ejemplos</div>
-        </a>
+        <div class="dropdown">
+            <button>Ejemplos</button>
+            <div class="dropdown-content">
+                <a href="./examples/xor.html">XOR</a>
+                <a href="./examples/clasificacion.html">Clasifica</a>
+                <a href="./examples/gato.html">Gato</a>
+            </div>
+        </div>
         <a href="about.html">
             <div class="navItem">About</div>
         </a>
@@ -130,7 +135,20 @@
         </div>
     </section>
 
-    <footer>footer</footer>
+    <footer>
+        <div class="footerTech">
+            <a href="https://ml5js.org" id="ml5Foot"><img src="./src/ml5.png" width="200"></a>
+            <a href="https://p5js.org" id="p5Foot"><img src="./src/p5js.svg" width="200"></a>
+            <a href="https://github.com/Antonio832/projects/tree/master/ml" id="gitFoot"><img src="./src/github.png" width="150"></a>
+        </div>
+        <div class="footerAbout">
+            <p>Conoce mas sobre este proyecto <a href="about.html">aqui</a>.</p>
+            <br>Este proyecto fue Hecho por:
+            <br> Valenzuela Antonio.
+            <br>Almada Valenzuela Jose Francisco.
+            <br><br><br>
+        </div>
+    </footer>
 </body>
 
 </html>
