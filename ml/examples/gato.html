@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/sheets/gato.css">
-    <title>ML done easy</title>
+    <title>Entrenando al gato</title>
 </head>
 
 <body>
@@ -35,7 +35,57 @@
     </header>
 
     <section>
-        jaja un gto
+        <div class="mainText">
+            <p>
+                El gato es un juego que casi todos hemos jugado alguna vez contra alguien, algunos hasta piensan ser los
+                mejores pero, ¿Sera posible que un gato sea mas inteligente que un humano?, puede que este gato no sea
+                mas inteligente que un humano, pero lo que si sabe muy bien es Minimax! un algoritmo de toma de
+                decisiones que permite evaluar futuros movimientos y potenciales jugadas en un juego a partir de un
+                estado inicial de este.
+                <br><br>
+                Esto, mediante la evaluacion de teoria de graficas, que nos permite evaluar distintos pesos basados para
+                distintos movimientos, los cuales a su vez son calculados dado el futuro que se deriva de esa jugada.
+                <br>
+                Tomemos el siguiente ejemplo, si empezamos desde un estado, donde X (el gato) esta en su turno, tendra
+                que ver las posibles jugadas y determinar cual es la que potencialmente lo lleve a ganar, prioritizando
+                no perder:
+            </p>
+            <img src="../src/gato/caso1.jpg" width="600" height="600">
+            <br>
+            <img src="../src/gato/caso2.jpg" width="600" height="350">
+            <br>
+            <p>
+                En este caso, para el gato la mejo jugada es evitar perder, asi que debe de ponerle mas peso a la unica
+                jugada que le favorece. Si el caso fuese distinto y no estuviese en riesgo inminente de perder, el gato
+                debera calcular tambien los futuros posibles eschenarios a partir de donde esta y de lo que puede hacer.
+                <br>
+                Este tipo de graficas son arboles binarios, en los cuales puedes encontrar caminos y puedes optar por el
+                que mas te convenga, calculando valores de los pesos de todo el recorrido del camino entero, esto se
+                puede visualizar con los arboles binarios.
+            </p>
+            <img src="../src/gato/EWoNkjpUcAIKr5m.png">
+            <p>
+                Ya que se obtienen los pesos, el modelo evalua y toma una decision de la jugada que debe de hacer.
+                <br>
+                Incluso en un juego tan simple como el gato, el numero de casos es muy grande, el arbol solo puede
+                crecer hasta cierto punto por el numero fijo de espacios que hay para jugar.
+                <br>
+                En la siguiente imagen podemos seguir la secuencia de pasos que el algoritmo siguio para llegar a ganar,
+                cada caso posible donde el gato gane, empate, o pierda, es evaluado, dependiendo de la jugada de donde
+                empezo a calcular. Es bueno mencionar que el gato va calculando los futuros casos a partir de ciertas
+                decisiones tomadas. Ya que si trata de calcular todo el arbol desde el principio sin necesidad, puede
+                que se vuelva muy costoso de calcular rapidamente.
+            </p>
+            <img src="../src/gato/winner.png" width="700">
+            <p>
+                En un juego como el Ajedrez, donde hay mas piesas que se mueven y muchos mas logares para moverse,
+                tiende a ser muy complicado el si quiera tomar una decision simple de hacer un movimiento a partir de
+                una jugada inicial.
+                <br><br>
+            </p>
+            <a href="../tryit/gato/">Juega contra el gato aqui!!!</a>
+            <br><br>
+        </div>
     </section>
 
     <footer>footer</footer>
