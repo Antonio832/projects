@@ -66,10 +66,10 @@ var cat = function (p) {
 
     p.mousePressed = function () {
         if (currentPlayer == human) {
-            // Human make turn
+
             let i = p.floor(p.mouseX / w);
             let j = p.floor(p.mouseY / h);
-            // If valid turn
+
             if (board[i][j] == '') {
                 board[i][j] = human;
                 currentPlayer = ai;
@@ -79,12 +79,12 @@ var cat = function (p) {
     }
 
     function bestMove() {
-        // AI to make its turn
+
         let bestScore = -Infinity;
         let move;
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
-                // Is the spot available?
+
                 if (board[i][j] == '') {
                     board[i][j] = ai;
                     let score = minimax(board, 0, false);
@@ -119,7 +119,7 @@ var cat = function (p) {
             let bestScore = -Infinity;
             for (let i = 0; i < 3; i++) {
                 for (let j = 0; j < 3; j++) {
-                    // Is the spot available?
+
                     if (board[i][j] == '') {
                         board[i][j] = ai;
                         let score = minimax(board, depth + 1, false);
@@ -133,7 +133,7 @@ var cat = function (p) {
             let bestScore = Infinity;
             for (let i = 0; i < 3; i++) {
                 for (let j = 0; j < 3; j++) {
-                    // Is the spot available?
+
                     if (board[i][j] == '') {
                         board[i][j] = human;
                         let score = minimax(board, depth + 1, true);
